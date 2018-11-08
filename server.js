@@ -5,12 +5,13 @@ const express = require('express');
 //import superagent to make xhttp request to send it to API 
 const superagent = require('superagent');
 //import cors to handle cross origin request 
-const cors = require('cors')
+const cors = require('cors');
 
 //initiate an instance of express
-const app = express()
+const app = express();
 
-app.use(cors())
+app.use(cors());
+
 
 
 // listen for a get request at route '/location' and send back the response
