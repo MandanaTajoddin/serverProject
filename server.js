@@ -15,12 +15,14 @@ app.use(cors());
 
 
 // listen for a get request at route '/location' and send back the response
+
 app.get('/location',(request,response)=>{
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=7600+Wisconsin+Ave+Bethesda+MD&key=${process.env.GEOCODE_API_key}`
     superagent.get(url)
     .then(res => response.send({
         latitude:res.body.results[0].geometry.location.lat,
         longitude:res.body.results[0].geometry.location.lng
+    
     }
     
 ))
@@ -56,10 +58,5 @@ app.listen(PORT, ()=>{
     console.log(`server is now running on port ${PORT}`)
 })
 
-// const geoLocationHelper = query =>{
-// const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=7600+Wisconsin+Ave+Bethesda+MD&key=AIzaSyAoSSKqCDcaSIJJnaOAmlYlwtRLut0rkbo'
 
-// superagent.get(url)
-// .then(res => res.send(res))
 
-// }
