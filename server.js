@@ -48,7 +48,7 @@ app.get('*',(request,response)=>{
 })
 
 //declare a variable PORT that will use either the environment variable of port or 4000
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 //require in the dotenv module and call the config method for adding environment variables
 require('dotenv').config()
